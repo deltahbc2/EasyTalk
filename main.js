@@ -258,7 +258,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   nextBtn.addEventListener("click", function () {
-    currentSlide = (currentSlide + 1) % (slideCount);
+    currentSlide = (currentSlide + 1) % slideCount;
     updateCarousel();
   });
 
@@ -273,4 +273,208 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Ajustar en redimensionamiento
   window.addEventListener("resize", updateCarousel);
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const chatbotToggle = document.getElementById("chatbotToggle");
+  const chatbotContainer = document.getElementById("chatbotContainer");
+  const chatbotClose = document.getElementById("chatbotClose");
+  const chatbotMessages = document.getElementById("chatbotMessages");
+  const userInput = document.getElementById("userInput");
+  const sendButton = document.getElementById("sendButton");
+  const typingIndicator = document.getElementById("typingIndicator");
+  const errorMessage = document.getElementById("errorMessage");
+
+  // API Key preconfigurada
+  const apiKey = "9AHpYZS4QQbSekXwnQ8QdFroDxPbWiFtIh6UDgJc4Qc";
+
+  let conversationHistory = [
+    {
+      role: "system",
+      content:
+        "Eres un asistente útil y amable. Responde en el mismo idioma del usuario. Formatea tus respuestas con párrafos, listas y código cuando sea apropiado para mejorar la legibilidad.",
+    },
+  ];
+
+  // Alternar visibilidad del chat
+  chatbotToggle.addEventListener("click", function () {
+    chatbotContainer.classList.toggle("active");
+    if (chatbotContainer.classList.contains("active")) {
+      userInput.focus();
+    }
+  });
+
+  chatbotClose.addEventListener("click", function () {
+    chatbotContainer.classList.remove("active");
+  });
+
+  // Cerrar al hacer clic fuera del chat
+  document.addEventListener("click", function (event) {
+    if (
+      chatbotContainer.classList.contains("active") &&
+      !chatbotContainer.contains(event.target) &&
+      !chatbotToggle.contains(event.target)
+    ) {
+      chatbotContainer.classList.remove("active");
+    }
+  });
+
+  // Función para formatear el texto (detectar y aplicar formato)
+  function formatText(text) {
+    // Detectar código entre ```
+    text = text.replace(/```([^`]+)```/g, "<pre>$1</pre>");
+
+    // Detectar código entre `
+    text = text.replace(/`([^`]+)`/g, "<code>$1</code>");
+
+    // Detectar listas con -
+    text = text.replace(/^-\s+(.+)$/gm, "<li>$1</li>");
+    text = text.replace(/(<li>.*<\/li>)/s, "<ul>$1</ul>");
+
+    // Detectar listas con números
+    text = text.replace(/^\d+\.\s+(.+)$/gm, "<li>$1</li>");
+    text = text.replace(/(<li>.*<\/li>)/s, "<ol>$1</ol>");
+
+    // Convertir saltos de línea en párrafos
+    text = text
+      .split("\n\n")
+      .map((paragraph) => {
+        if (!paragraph.startsWith("<")) {
+          return `<p>${paragraph}</p>`;
+        }
+        return paragraph;
+      })
+      .join("");
+
+    return text;
+  }
+
+  // Función para agregar mensaje al chat
+  function addMessage(message, isUser) {
+    const messageDiv = document.createElement("div");
+    messageDiv.classList.add("message");
+    messageDiv.classList.add(isUser ? "user-message" : "bot-message");
+
+    const contentDiv = document.createElement("div");
+    contentDiv.classList.add("message-content");
+
+    // Aplicar formato al texto
+    contentDiv.innerHTML = isUser ? message : formatText(message);
+
+    messageDiv.appendChild(contentDiv);
+    chatbotMessages.insertBefore(messageDiv, typingIndicator);
+
+    // Scroll to bottom
+    chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+  }
+
+  // Función para mostrar errores
+  function showError(message) {
+    errorMessage.textContent = message;
+    errorMessage.style.display = "block";
+
+    // Ocultar el error después de 5 segundos
+    setTimeout(() => {
+      errorMessage.style.display = "none";
+    }, 5000);
+  }
+
+  // Función para enviar mensaje al chatbot
+  async function sendMessageToBot(userMessage) {
+    try {
+      // Mostrar indicador de typing
+      typingIndicator.style.display = "block";
+      chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+
+      // Agregar el mensaje del usuario al historial
+      conversationHistory.push({ role: "user", content: userMessage });
+
+      // Realizar la llamada a la API de Poe
+      const response = await fetch("https://api.poe.com/v1/chat/completions", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${apiKey}`,
+        },
+        body: JSON.stringify({
+          model: "DeltaHBC-Chat",
+          messages: conversationHistory,
+          stream: false,
+        }),
+      });
+
+      if (!response.ok) {
+        const errorText = await response.text();
+        throw new Error(errorText || "Error en la respuesta de la API");
+      }
+
+      const data = await response.json();
+
+      // Obtener la respuesta del bot
+      const botResponse = data.choices[0].message.content;
+
+      // Agregar la respuesta al historial
+      conversationHistory.push({ role: "assistant", content: botResponse });
+
+      // Ocultar indicador de typing y mostrar respuesta
+      typingIndicator.style.display = "none";
+      addMessage(botResponse, false);
+    } catch (error) {
+      console.error("Error:", error);
+      typingIndicator.style.display = "none";
+
+      // Mensaje de error genérico para el usuario
+      let errorMsg = "Error al conectar con el chatbot. ";
+
+      // Intentar obtener más detalles del error
+      try {
+        const errorData = JSON.parse(error.message);
+        if (errorData.error && errorData.error.message) {
+          errorMsg += errorData.error.message;
+        } else {
+          errorMsg += error.message;
+        }
+      } catch (e) {
+        errorMsg += error.message;
+      }
+
+      showError(errorMsg);
+
+      // Revertir el último mensaje del historial en caso de error
+      conversationHistory.pop();
+
+      // Ofrecer una respuesta alternativa
+      addMessage(
+        "Lo siento, estoy teniendo dificultades técnicas. Por favor, intenta nuevamente.",
+        false
+      );
+      conversationHistory.push({
+        role: "assistant",
+        content:
+          "Lo siento, estoy teniendo dificultades técnicas. Por favor, intenta nuevamente.",
+      });
+    }
+  }
+
+  // Función para manejar el envío de mensajes
+  function handleSendMessage() {
+    const message = userInput.value.trim();
+    if (message === "") return;
+
+    // Agregar mensaje del usuario
+    addMessage(message, true);
+    userInput.value = "";
+
+    // Enviar mensaje al bot
+    sendMessageToBot(message);
+  }
+
+  // Event listeners
+  sendButton.addEventListener("click", handleSendMessage);
+
+  userInput.addEventListener("keypress", function (e) {
+    if (e.key === "Enter") {
+      handleSendMessage();
+    }
+  });
 });

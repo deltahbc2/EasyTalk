@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Delta HBC">
-    <meta property="og:title" content="EasyTalk - Aplicación de comunicación por DeltaHBC">
+    <meta property="og:title" content="EasyTalk - DeltaHBC">
     <meta property="og:description" content="Desarrollando soluciones innovadoras con el fin de ayudar a los sectores más vulnerables del pais. Participantes oficiales del HackaTec 2025.">
     <meta property="og:image" content="https://cesaroliva.github.io/EasyTalk/Imagenes/logo.png">
     <meta property="og:image:type" content="image/png">
@@ -357,6 +357,36 @@
             </div>
         </div>
     </section>
+
+    <div class="chatbot-toggle" id="chatbotToggle">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M4.798 3a2.25 2.25 0 0 0-2.25 2.25v10.5a2.25 2.25 0 0 0 2.25 2.25h4.5v3a1.5 1.5 0 0 0 2.45 1.16L16.2 18h3.002a2.25 2.25 0 0 0 2.25-2.25V5.25A2.25 2.25 0 0 0 19.202 3H4.798Z" />
+        </svg>
+    </div>
+    
+    <!-- Contenedor del chatbot -->
+    <div class="chatbot-container" id="chatbotContainer">
+        <div class="chatbot-header">
+            <h3>Asistente EasyTalk</h3>
+            <button class="chatbot-close" id="chatbotClose">✕</button>
+        </div>
+        
+        <div class="chatbot-messages" id="chatbotMessages">
+            <div class="message bot-message">
+                <div class="message-content">
+                    ¡Hola! 👋 Soy tu asistente virtual. ¿En qué puedo ayudarte hoy?
+                </div>
+            </div>
+            <div class="typing-indicator" id="typingIndicator">El asistente está escribiendo...</div>
+        </div>
+        
+        <div class="error-message" id="errorMessage"></div>
+        
+        <div class="chatbot-input">
+            <input type="text" id="userInput" placeholder="Escribe tu mensaje..." autocomplete="off">
+            <button id="sendButton">Enviar</button>
+        </div>
+    </div>
   
     <footer>
         <div class="flex flex-col items-center">

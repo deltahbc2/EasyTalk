@@ -73,6 +73,5 @@ void setup(){
 
 //Ciclo loop a ejecutar constantemente
 void loop() {
-  
   delay(10000);
 }
