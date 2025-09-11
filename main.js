@@ -228,3 +228,67 @@ function checkScroll() {
     }
   });
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  const slider = document.getElementById("teamSlider");
+  const slides = document.querySelectorAll(".team-slide");
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
+  const dotsContainer = document.getElementById("carouselDots");
+
+  let currentSlide = 0;
+  const slideCount = slides.length;
+
+  for (let i = 0; i < slideCount; i++) {
+    const dot = document.createElement("div");
+    dot.classList.add("dot");
+    if (i === 0) dot.classList.add("active");
+    dot.setAttribute("data-index", i);
+    dotsContainer.appendChild(dot);
+  }
+
+  const dots = document.querySelectorAll(".dot");
+
+  function updateCarousel() {
+    const slideWidth = slides[0].offsetWidth + 40;
+    slider.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+
+    slides.forEach((slide, index) => {
+      if (index === currentSlide) {
+        slide.classList.add("active");
+      } else {
+        slide.classList.remove("active");
+      }
+    });
+
+    dots.forEach((dot, index) => {
+      if (index === currentSlide) {
+        dot.classList.add("active");
+      } else {
+        dot.classList.remove("active");
+      }
+    });
+  }
+
+  prevBtn.addEventListener("click", function () {
+    currentSlide = (currentSlide - 1 + slideCount) % slideCount;
+    updateCarousel();
+  });
+
+  nextBtn.addEventListener("click", function () {
+    currentSlide = (currentSlide + 1) % slideCount;
+    updateCarousel();
+  });
+
+  dots.forEach((dot) => {
+    dot.addEventListener("click", function () {
+      currentSlide = parseInt(this.getAttribute("data-index"));
+      updateCarousel();
+    });
+  });
+
+  updateCarousel();
+
+  // Ajustar en redimensionamiento
+  window.addEventListener("resize", updateCarousel);
+});

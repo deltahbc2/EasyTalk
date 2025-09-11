@@ -27,7 +27,7 @@ struct Opcion {
 
 // Diccionario de necesidades
 Opcion necesidades[] = {
-  {"Comida", "https://github.com/CesarOliva/EasyTalk/blob/main/Tarjetas/Comida.png", "¡Quiero comer!🥪"},
+  {"Comida", "https://github.com/CesarOliva/EasyTalk/blob/main/Tarjetas/Comida.png", "¡Quiero comer🥪!"},
   {"Agua", "https://github.com/CesarOliva/EasyTalk/blob/main/Tarjetas/Agua.png", "¡Quiero agua🥤!"},
   {"Baño", "https://github.com/CesarOliva/EasyTalk/blob/main/Tarjetas/Bano.png", "¡Necesito ir al baño🚽!"},
   {"Ducha", "https://github.com/CesarOliva/EasyTalk/blob/main/Tarjetas/Ducha.png", "¡Necesito ducharme🚿!"}

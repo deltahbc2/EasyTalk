@@ -9,11 +9,9 @@
   --warning: #f39c12;
   --purple: #9b59b6;
   --gradient: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-  --gradient-accent: linear-gradient(
-    135deg,
-    var(--primary) 0%,
-    var(--accent) 100%
-  );
+  --gradient-accent: linear-gradient(135deg,
+      var(--primary) 0%,
+      var(--accent) 100%);
   --shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   --shadow-hover: 0 15px 35px rgba(0, 0, 0, 0.2);
 }
@@ -137,8 +135,7 @@ header.scrolled {
   min-height: 100vh;
   padding: 160px 0 100px;
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url("Imagenes/header.jpeg")
-      no-repeat center center/cover;
+    url("Imagenes/header.jpeg") no-repeat center center/cover;
   color: white;
   text-align: center;
   position: relative;
@@ -206,12 +203,10 @@ header.scrolled {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.2),
-    transparent
-  );
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent);
   transition: 0.5s;
 }
 
@@ -267,7 +262,7 @@ section {
 }
 
 .about__main {
-  display:flex;
+  display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
@@ -336,7 +331,7 @@ section {
 }
 
 .challenges-grid {
-  display:flex;
+  display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
@@ -423,12 +418,10 @@ section {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.2),
-    transparent
-  );
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent);
   transition: 0.5s;
 }
 
@@ -456,11 +449,9 @@ section {
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(
-    circle,
-    rgba(255, 255, 255, 0.1) 0%,
-    transparent 70%
-  );
+  background: radial-gradient(circle,
+      rgba(255, 255, 255, 0.1) 0%,
+      transparent 70%);
   transform: rotate(30deg);
 }
 
@@ -524,7 +515,7 @@ section {
 }
 
 .stats-grid {
-  display:flex;
+  display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
@@ -552,7 +543,7 @@ section {
 }
 
 .tech-grid {
-  display:flex;
+  display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
@@ -824,12 +815,10 @@ section {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.2),
-    transparent
-  );
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent);
   transition: 0.5s;
 }
 
@@ -849,20 +838,20 @@ footer {
   padding: 50px 0 20px;
 }
 
-footer h3{
-    border-bottom: 1px solid #1a7fd873;
+footer h3 {
+  border-bottom: 1px solid #1a7fd873;
 }
 
 footer .footer {
-    border-bottom: 1px solid #1a7fd859;    
+  border-bottom: 1px solid #1a7fd859;
 }
 
-.about{
-background-color: #d3d3d3;
+.about {
+  background-color: #d3d3d3;
 }
 
-.team{
-background-color: #d3d3d3;
+.team {
+  background-color: #d3d3d3;
 }
 
 
@@ -870,6 +859,7 @@ background-color: #d3d3d3;
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -880,6 +870,7 @@ background-color: #d3d3d3;
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -891,6 +882,7 @@ background-color: #d3d3d3;
     opacity: 0;
     transform: translateY(-20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -901,9 +893,11 @@ background-color: #d3d3d3;
   0% {
     transform: scale(1);
   }
+
   50% {
     transform: scale(1.05);
   }
+
   100% {
     transform: scale(1);
   }
@@ -914,6 +908,7 @@ background-color: #d3d3d3;
     transform: translateY(0) rotate(0deg);
     opacity: 1;
   }
+
   100% {
     transform: translateY(-1000px) rotate(720deg);
     opacity: 0;
@@ -928,6 +923,7 @@ background-color: #d3d3d3;
   .contact-grid {
     grid-template-columns: 1fr;
   }
+
   .nav-links {
     position: fixed;
     top: 70px;
@@ -943,7 +939,8 @@ background-color: #d3d3d3;
     padding: 2rem 0;
     gap: 2rem;
   }
-    .menu-toggle {
+
+  .menu-toggle {
     display: flex;
   }
 
@@ -965,7 +962,7 @@ background-color: #d3d3d3;
     font-size: 1.2rem;
   }
 
-  .cta-button{
+  .cta-button {
     padding: 10px 15px;
     font-size: 16px;
   }
@@ -982,5 +979,11 @@ background-color: #d3d3d3;
 
   .section-title h2 {
     font-size: 2rem;
+  }
+
+  .carousel-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
   }
 }
