@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Metaetiquetas básicas esenciales -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- Información básica del sitio -->
+    <title>EasyTalk - Aplicación de comunicación por DeltaHBC</title>
+    <meta name="description" content="EasyTalk es una aplicación innovadora de mensajería y comunicación desarrollada por DeltaHBC. Conecta con amigos, familia y colegas de forma sencilla y segura.">
+    <meta name="keywords" content="EasyTalk, mensajería, chat, comunicación, DeltaHBC, aplicacion mensajes">
+    <meta name="author" content="Delta HBC">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph para redes sociales -->
+    <meta property="og:title" content="EasyTalk - Aplicación de comunicación por DeltaHBC">
+    <meta property="og:description" content="Desarrollando soluciones innovadoras con el fin de ayudar a los sectores más vulnerables del pais. Participantes oficiales del HackaTec 2025.">
+    <meta property="og:image" content="https://cesaroliva.github.io/EasyTalk/Imagenes/logo.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="100">
+    <meta property="og:image:height" content="100">
+    <meta property="og:url" content="https://cesaroliva.github.io/EasyTalk">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="EasyTalk">
+    <!--Metaetiquetas-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Delta HBC">
+    <title>EasyTalk - DeltaHBC</title>
+    <meta name="description" content="EasyTalk. Transformando la comunicación para personas no verbales">
+    <meta property="og:image" content="https://cesaroliva.github.io/EasyTalk/Imagenes/logo.png" />
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="100">
+    <meta property="og:image:height" content="100">
+    <link rel="icon" type="image/x-icon" href="https://cesaroliva.github.io/EasyTalk/Imagenes/logo.png">
+    <link rel="apple-touch-icon" href="https://cesaroliva.github.io/EasyTalk/Imagenes/logo.png">
+
+    <!--Scripts y links-->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://kit.fontawesome.com/17383348a8.js" crossorigin="anonymous"></script>    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Raleway:wght@300;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="icon" href="Imagenes/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.min.js"></script>
+</head>
+<body> 
+    <header id="mainHeader">
+        <div class="container nav-container">
+            <div class="logo">
+                <i class="fas fa-brain"></i> DeltaHBC
+            </div>
+            <div class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Inicio</a></li>
+                <li><a href="#about">¿Quiénes somos?</a></li>
+                <li><a href="#challenges">Retos</a></li>
+                <li><a href="#solution">Solución</a></li>
+                <li><a href="#technology">Tecnología</a></li>
+                <li><a href="#team">Equipo</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="hero flex" id="hopme">
+        <div class="particles" id="particles"></div>
+        <div class="container flex flex-col items-center justify-center pt-8 hero-content flex-col items-center justify-center">
+            <h1>EasyTalk</h1>
+            <p>Transformando la comunicación para personas no verbales</p>
+            <a href="#solution" class="cta-button">Conoce Nuestra Propuesta</a>
+        </div>
+    </section>
+
+   
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>¿Quiénes Somos?</h2>
+                <p>En DeltaHBC, somos más que una empresa de tecnología; somos agentes de cambio social. Nuestra misión es crear herramientas que eliminen barreras y construyan puentes hacia una sociedad más inclusiva.</p>
+            </div>
+            
+            <div class="about__main">
+                <article class="about__icons">
+                    <i class="fas fa-bullseye about__icon"></i>
+                    <h3 class="about__title">Misión</h3>
+                    <p class="about__paragrah">Garantizar que esta tecnología esté al alcance de toda la comunidad.</p>
+                </article>
+
+                <article class="about__icons">
+                    <i class="fas fa-eye about__icon"></i>
+                    <h3 class="about__title">Visión</h3>
+                    <p class="about__paragrah">Ser referentes en la creación de tecnologías emergentes aplicadas en la solucion de problemas de comunicación.</p>
+                </article>
+
+                <article class="about__icons">
+                    <i class="fas fa-heart about__icon"></i>
+                    <h3 class="about__title">Valores</h3>
+                    <p class="about__paragrah">• Solidaridad<br>• Servicio<br>• Responsabilidad Social</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="challenges" id="challenges">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nuestro Enfoque</h2>
+                <p>Abordamos la problematica enfocada en el diseño avanzado de dispositivos y maquinaria </p>
+            </div>
+            <div class="challenges-grid">
+                <div class="challenge-card">
+                    <div class="challenge-img" style="background-image: url('Imagenes/asertiva.jpg')"></div>
+                    <div class="challenge-content">
+                        <h3>Comunicacion Asertiva</h3>
+                        <p>Facilitar la expresión clara y efectiva de necesidades para comunicarse con precisión y confianza.</p>
+                        <a href="#" class="challenge-button">Ver Solución</a>
+                    </div>
+                </div>
+                <div class="challenge-card">
+                    <div class="challenge-img" style="background-image: url('Imagenes/habla.jpeg')"></div>
+                    <div class="challenge-content">
+                        <h3>Soluciones de Habla</h3>
+                        <p>Desarrollamos sistemas intuitivos que generan lenguaje natural, dando voz a quienes no pueden vocalizar</p>
+                        <a href="#" class="challenge-button">Ver Solución</a>
+                    </div>
+                </div>
+                <div class="challenge-card">
+                    <div class="challenge-img" style="background-image: url('Imagenes/accesible.jpg')"></div>
+                    <div class="challenge-content">
+                        <h3>Alternativa Accesible</h3>
+                        <p>Herramientas inclusivas, económicas y fáciles de usar para todos. Rompiendo barreras económicas y tecnológicas.</p>
+                        <a href="#" class="challenge-button">Ver Solución</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+ 
+    <section class="solution" id="solution">
+        <div class="container">
+            <div class="solution-content">
+                <div class="solution-text">
+                    <h2 class="text-center md:text-start">Nuestra Propuesta Innovadora</h2>
+                    <p class="text-center md:text-start">Desarrollamos un sistema para facilitar el habla en personas que carecen del habla por diferentes circunstancias adaptable y accesible para todos.</p>
+                    <ul class="solution-features">
+                        <li><i class="fas fa-check-circle"></i> Mejora en la comunicacion</li>
+                        <li><i class="fas fa-check-circle"></i> Interfaz intuitiva y accesible</li>
+                        <li><i class="fas fa-check-circle"></i> Implementación escalable y adaptable</li>
+                        <li><i class="fas fa-check-circle"></i> Enfoque Tecnologíco</li>
+                        <li><i class="fas fa-check-circle"></i> Integración con tecnologías emergentes</li>
+                    </ul>
+                </div>
+                <div class="solution-visual">
+                    <canvas id="solutionChart" class="w-[80%]" height="300"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  
+    <section class="statistics" id="statistics">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="text-white">Nuestro Impacto en Números</h2>
+                <p class="text-white">Resultados tangibles que demuestran la efectividad de nuestras soluciones</p>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number" id="stat1">0</div>
+                    <div class="stat-label">Siniestros Prevenidos</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="stat2">0</div>
+                    <div class="stat-label">Clientes Satisfechos</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="stat3">0</div>
+                    <div class="stat-label">Horas de Desarrollo</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="stat4">0%</div>
+                    <div class="stat-label">Eficiencia Mejorada</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  
+    <section class="technology" id="technology">
+        <div class="container">
+            <div class="section-title">
+                <h2 clas>Tecnologías Utilizadas</h2>
+                <p>Combinamos las herramientas más modernas para crear soluciones efectivas y eficientes</p>
+            </div>
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <div class="tech-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Desarrollo Frontend</h3>
+                    <p>HTML5, CSS3, JavaScript, y diferentes librerias para interfaces responsivas y atractivas.</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>Desarrollo del Prototipo</h3>
+                    <p>Arduino, C++, ESP-32 y componentes electronicos accesibles y funcionales.</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3>Integración con API</h3>
+                    <p>Integración con la API de Telegram para el manejo de mensajes y notificaciones.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="team" id="team">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nuestro Equipo</h2>
+                <p>Un grupo multidisciplinario de talentosos estudiantes comprometidos con la innovación</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="Imagenes/laura.jpg" alt="Team Member" class="team-img">
+                    <div class="team-info">
+                        <h3>Laura Gómez</h3>
+                        <p>Dra. en Computación (Asesora)</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <img src="Imagenes/sergio.jpg" alt="Team Member" class="team-img">
+                    <div class="team-info">
+                        <h3>Sergio Acosta</h3>
+                        <p>Ing. Sistemas Computacionales</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <img src="Imagenes/andre.jpg" alt="Team Member" class="team-img">
+                    <div class="team-info">
+                        <h3>André Anzures</h3>
+                        <p>Ing. Sistemas Computacionales</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <img src="Imagenes/anayenci.jpg" alt="Team Member" class="team-img">
+                    <div class="team-info">
+                        <h3>Anayenci Montemayor</h3>
+                        <p>Ing. Gestion Empresarial</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <img src="Imagenes/cesar.jpg" alt="Team Member" class="team-img">
+                    <div class="team-info">
+                        <h3>César Oliva</h3>
+                        <p>Ing. Sistemas Computacionales</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <img src="Imagenes/oscar.jpg" alt="Team Member" class="team-img">
+                    <div class="team-info">
+                        <h3>Oscar Santiago</h3>
+                        <p>Ing. Sistemas Computacionales</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2 class="text-center md:text-start text-4xl">¿Interesado en Nuestra Solución?</h2>
+                    <p class="text-center md:text-start text-[18px]">Contáctanos para más información sobre cómo podemos colaborar o implementar nuestra propuesta</p>
+                    <ul class="contact-details text-[18px]">
+                        <li><i class="fas fa-map-marker-alt"></i> Instituto Tecnológico de Nuevo León</li>
+                        <li><i class="fas fa-envelope"></i> DeltaHBC@gmail.com</li>
+                        <li><i class="fas fa-phone"></i> +52 8157 0500</li>
+                        <li><i class="fas fa-clock"></i> Disponibles 24/7 durante el HackaTec</li>
+                    </ul>
+                </div>
+                <div class="contact-form">
+                    <form class="flex flex-col items-center" method="post" action="https://formsubmit.co/cesaroliva.work@gmail.com">
+                        <input type="text" placeholder="Nombre completo" required>
+                        <input type="email" placeholder="Correo electrónico" required>
+                        <input type="text" placeholder="Asunto">
+                        <textarea placeholder="Tu mensaje" required></textarea>
+                        <button class="max-w-[180px]" type="submit">Enviar Mensaje</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+  
+    <footer>
+        <div class="flex flex-col items-center">
+            <div class="footer w-[90%] md:w-[80%] flex flex-row flex-wrap justify-center mb-4 pb-2">
+                <div class="w-full md:w-[30%] mb-6 md:mb-0 px-4 flex flex-col gap-y-2">
+                    <h3 class="text-3xl pb-2 text-center md:text-start">EasyTalk</h3>
+                    <p class="text-[16px] text-center md:text-start ">Desarrollando soluciones innovadoras con el fin de ayudar a los sectores más vulnerables del pais. Participantes oficiales del HackaTec 2025.</p>
+                    <div class="footer-social text-center md:text-start">
+                        <a href="https://www.facebook.com/institutotecnologicodenuevoleon" target="_blank"><i class="fab fa-facebook text-[30px] mr-2"></i></a>
+                        <a href="https://www.instagram.com/oficialtecnl/"><i class="fab fa-instagram text-[30px]"></i></a>
+                    </div>
+                </div>
+                <div class="w-full md:w-[30%] mb-6 md:mb-0 px-4 flex flex-col gap-y-2">
+                    <h3 class="text-center text-3xl pb-2">Recursos</h3>
+                    <ul class="footer-links text-center flex flex-col gap-y-2 text-[16px]">
+                        <li class="hover:text-[#2091f9]"><a href="#">Documentación</a></li>
+                        <li class="hover:text-[#2091f9]"><a href="#">Presentación</a></li>
+                        <li class="hover:text-[#2091f9]"><a href="#">Código Fuente</a></li>
+                        <li class="hover:text-[#2091f9]"><a href="#">Demo en Vivo</a></li>
+                        <li class="hover:text-[#2091f9]"><a href="#">Memoria Técnica</a></li>
+                    </ul>
+                </div>
+                <div class="w-full md:w-[30%] mb-6 md:mb-0 px-4 flex flex-col gap-y-2">
+                    <h3 class="text-center md:text-end text-3xl pb-2">Mapa</h3>
+                    <iframe class="w-full" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3596.2195509929534!2d-100.24579992500472!3d25.66401581263548!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8662c038d1481d33%3A0xb3b13be0b9c7c6f2!2sInstituto%20Tecnol%C3%B3gico%20de%20Nuevo%20Le%C3%B3n!5e0!3m2!1ses!2smx!4v1757560113737!5m2!1ses!2smx"></iframe>
+                </div>
+            </div>
+            <div class="copyright mt-3">
+                <p>&copy; 2025 EasyTalk - Un proyecto de DeltaHBC</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
