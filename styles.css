@@ -987,3 +987,150 @@ footer .footer {
     font-size: 1rem;
   }
 }
+
+/* Carrusel de equipo */
+.team-carousel {
+  position: relative;
+  overflow: hidden;
+  padding: 20px 0;
+}
+
+.team-slider {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.team-slide {
+  flex: 0 0 calc(33.333% - 40px);
+  min-width: 250px;
+  margin: 0 20px;
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  opacity: 0.7;
+  transform: scale(0.9);
+}
+
+.team-slide.active {
+  opacity: 1;
+  transform: scale(1);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.team-img-container {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+}
+
+.team-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.team-slide:hover .team-img {
+  transform: scale(1.1);
+}
+
+.team-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(32, 145, 249, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.team-slide:hover .team-overlay {
+  opacity: 1;
+}
+
+.team-social {
+  display: flex;
+  gap: 15px;
+}
+
+.team-social a {
+  color: white;
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.team-social a:hover {
+  transform: translateY(-5px);
+}
+
+.team-info {
+  padding: 20px;
+  text-align: center;
+}
+
+.team-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+  color: var(--secondary);
+}
+
+.team-info p {
+  color: var(--primary);
+  margin-bottom: 15px;
+}
+
+.carousel-controls {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  gap: 15px;
+}
+
+.carousel-btn {
+  background: var(--primary);
+  color: white;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 5px 15px rgba(32, 145, 249, 0.3);
+}
+
+.carousel-btn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(32, 145, 249, 0.4);
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ddd;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  background: var(--primary);
+  transform: scale(1.2);
+}

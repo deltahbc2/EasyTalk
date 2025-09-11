@@ -194,24 +194,6 @@ document.addEventListener("DOMContentLoaded", () => {
   createParticles();
   window.addEventListener("scroll", checkScroll);
   checkScroll(); // Comprobar al cargar la página
-
-  // Configurar botón QR
-  document.getElementById("qrButton").addEventListener("click", toggleQRPanel);
-  document
-    .getElementById("qrPanelClose")
-    .addEventListener("click", toggleQRPanel);
-
-  // Configurar pestañas
-  document.querySelectorAll(".qr-panel__tab").forEach((tab) => {
-    tab.addEventListener("click", () => {
-      showTab(tab.getAttribute("data-tab"));
-    });
-  });
-
-  // Verificar si la biblioteca QR está cargada
-  if (typeof qrcode === "undefined") {
-    showNotification("Error: No se cargó la biblioteca QR", true);
-  }
 });
 
 // Efecto de aparición al hacer scroll
@@ -276,7 +258,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   nextBtn.addEventListener("click", function () {
-    currentSlide = (currentSlide + 1) % slideCount;
+    currentSlide = (currentSlide + 1) % (slideCount);
     updateCarousel();
   });
 
