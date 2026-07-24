@@ -57,7 +57,7 @@ El prototipo esta pensado como base para expandir el envio de mensajes segun la 
 
 Version publicada:
 
-https://deltahbc.com/
+https://deltahbc2.github.io/EasyTalk/
 
 ## Equipo
 
